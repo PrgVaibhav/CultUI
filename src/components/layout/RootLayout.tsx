@@ -3,7 +3,7 @@ import { Navbar } from "./Navbar/Navbar";
 
 export const RootLayout = () => {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col ">
       <header className="container m-auto p-1 sm:p-2">
         <Navbar />
       </header>

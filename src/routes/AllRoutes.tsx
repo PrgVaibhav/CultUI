@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RootLayout } from "../components";
-import { Home } from "../pages";
+import { Components, GetStarted, Home } from "../pages";
 
 export const AllRoutes = () => {
   const router = createBrowserRouter([
@@ -15,15 +15,19 @@ export const AllRoutes = () => {
         },
         {
           path: "components",
-          element: <>Components</>,
+          element: <Components />,
         },
         {
           path: "components/:id",
-          element: <>Components page</>,
+          element: <Components />,
         },
         {
           path: "updates",
           element: <>Updates</>,
+        },
+        {
+          path: "get-started",
+          element: <GetStarted />,
         },
       ],
     },

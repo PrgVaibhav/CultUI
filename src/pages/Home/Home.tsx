@@ -1,10 +1,11 @@
 import React from "react";
 import { Button } from "../../components";
 import { ChevronRight } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 export const Home: React.FunctionComponent = () => {
   return (
-    <section className="flex flex-col gap-8">
+    <section className="flex  justify-center min-h-screen  overflow-hidden flex-col gap-8">
       <div className="w-full sm:w-8/12">
         <h1 className="title text-3xl sm:text-5xl font-bold tracking-tight leading-snug">
           The <span className="font-extrabold  ">CultUI</span> Component
@@ -25,25 +26,29 @@ export const Home: React.FunctionComponent = () => {
         </p>
       </div>
       <div className="flex items-center gap-4">
-        <Button
-          size="md"
-          cn="bg-[#63636373] text-gray-200"
-          key={1}
-          label="Get Started Button"
-          rightIcon={<ChevronRight />}
-        >
-          Get Started
-        </Button>
+        <NavLink to={"/get-started"}>
+          <Button
+            size="sm"
+            cn="bg-[#63636373] text-gray-200 text-md tracking-tight font-medium"
+            key={1}
+            label="Get Started Button"
+            rightIcon={<ChevronRight />}
+          >
+            Get Started
+          </Button>
+        </NavLink>
 
-        <Button
-          size="md"
-          cn="bg-transparent text-gray-200"
-          key={2}
-          label="Get Started Button"
-          rightIcon={<ChevronRight />}
-        >
-          Check Components
-        </Button>
+        <NavLink to={"/components"}>
+          <Button
+            size="sm"
+            cn="bg-transparent text-gray-200 text-md tracking-tight font-medium"
+            key={2}
+            label="Get Started Button"
+            rightIcon={<ChevronRight />}
+          >
+            Check Components
+          </Button>
+        </NavLink>
       </div>
     </section>
   );
