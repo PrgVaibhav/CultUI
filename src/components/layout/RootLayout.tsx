@@ -8,7 +8,7 @@ export const RootLayout = () => {
         <Navbar />
       </header>
 
-      <main className="container m-auto p-2 flex-1 flex items-center justify-center overflow-hidden">
+      <main className="container m-auto p-4 sm:p-2 flex-1 flex items-center justify-center overflow-hidden">
         <Outlet />
       </main>
     </div>

@@ -23,7 +23,7 @@ export const Navbar: React.FC = () => {
           </p>
         </div>
       </NavLink>
-      <ul className="hidden sm:flex gap-14 items-center">
+      <ul className="hidden sm:flex gap-7 items-center">
         {ROUTES.map((route) => (
           <li key={route.id}>
             <NavLink
