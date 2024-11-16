@@ -10,7 +10,7 @@ export const SearchComponent: React.FC<SearchComponentProps> = ({
 }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-[#000000ec]  z-50 p-4 sm:p-0">
-      <div className="w-full sm:w-6/12 h-[400px] flex items-center justify-center flex-col gap-4  bg-[#6363639a]  text-white p-4 shadow-lg rounded-lg relative">
+      <div className="w-full sm:w-8/12 h-[400px] flex items-center justify-center  flex-col gap-4  bg-[#6363639a]  text-white p-4 shadow-lg rounded-lg relative">
         <TitleDescription
           h1Cn="decoration-slate-400 underline underline-offset-4"
           title="Find your way."

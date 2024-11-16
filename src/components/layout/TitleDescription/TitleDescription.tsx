@@ -1,6 +1,6 @@
 interface TitleDescriptionProps {
   title: string;
-  description: string;
+  description?: string;
   h1Cn?: string;
   label?: string;
   divCn?: string;

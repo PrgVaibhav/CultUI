@@ -32,11 +32,11 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       className={`${
         sizeClasses[size] // Apply size-specific classes
-      } ${cn} flex items-center gap-2 ${
+      } ${cn} flex items-center gap-2 text ${
         rightIcon || leftIcon ? "justify-around" : "justify-center"
       } space-x-2 cursor-pointer rounded-lg ${
         disable ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
-      }`}
+      } active:scale-90 duration-150 transition-all`}
       aria-label={label}
       disabled={disable}
       onClick={clickable}

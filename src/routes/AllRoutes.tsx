@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RootLayout } from "../components";
-import { Components, GetStarted, Home } from "../pages";
+import { Components, GetStarted, Home, SingleComponents } from "../pages";
 
 export const AllRoutes = () => {
   const router = createBrowserRouter([
@@ -19,7 +19,7 @@ export const AllRoutes = () => {
         },
         {
           path: "components/:id",
-          element: <Components />,
+          element: <SingleComponents />,
         },
         {
           path: "updates",

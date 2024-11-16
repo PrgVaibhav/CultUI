@@ -58,12 +58,12 @@ export const Components: React.FC = () => {
           <SearchComponent clickable={toggleSearchComponent} />
         )}
       </div>
-      <section className="flex flex-wrap items-stretch gap-4  sm:gap-4 w-full">
+      <section className="flex flex-wrap items-stretch  gap-4 w-full">
         {COMPONENT_CARD_DATA.map((data) => {
           return (
             <div
               key={data.id}
-              className="flex flex-col gap-4 w-full sm:w-[325px]   bg-[#63636373] p-3 rounded-lg shadow-xl  "
+              className="flex flex-col gap-2 w-full sm:w-[325px]  bg-[#63636373] p-3 rounded-lg shadow-xl  "
             >
               <DemoSection>
                 <Button
@@ -72,13 +72,6 @@ export const Components: React.FC = () => {
                 >
                   Click me
                 </Button>
-                {/* <input
-                  type="text"
-                  placeholder="Example Input"
-                  className="px-4 py-3 max-w-max rounded-md shadow-lg bg-[#63636373] text-white placeholder-gray-300 focus:outline-none 
-             focus:ring-2 focus:ring-blue-500 focus:bg-[#4a4a4a73] active:bg-[#525252] hover:bg-[#4a4a4a] transition-all duration-200 ease-in-out"
-                  autoFocus
-                /> */}
               </DemoSection>
               <Link to={`/components/${data.title}`} className=" ">
                 <div className="flex flex-col gap-2 ">
