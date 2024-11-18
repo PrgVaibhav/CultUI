@@ -5,14 +5,33 @@ import {
   SmallMessage,
   TitleDescription,
 } from "../../../components";
+import { useParams } from "react-router-dom";
+import {
+  COMPONENT_CARD_DATA,
+  ComponentCardData,
+} from "../../../helpers/data/Data";
+import React, { useEffect, useState } from "react";
 
 export const SingleComponents = () => {
+  const pathname = useParams();
+  const [data, setData] = useState<ComponentCardData | null>(null);
+
+  useEffect(() => {
+    const filteredData = COMPONENT_CARD_DATA.find(
+      (component) => component.title === pathname.id
+    );
+
+    setData(filteredData || null);
+  }, [pathname.id]);
+
+  console.log(data);
+
   return (
     <section className="flex flex-col gap-4">
       <Breadcrumb />
       <TitleDescription
-        title="Button Component."
-        description="A versatile and customizable button component, designed to drive user actions with style and functionality. Tailor it to fit your project with adjustable sizes, colors, and states like hover, active, and disabled. Perfect for CTAs, navigation, and forms, this button component enhances user experience with smooth animations and accessible interactions."
+        title={data?.componentPageTitle}
+        description={data?.componentPageDescription}
         divCn="border-b border-gray-600 pb-4"
         h1Cn="decoration-slate-400 underline underline-offset-4"
       />
@@ -45,67 +64,10 @@ export const SingleComponents = () => {
         </div>
         <CodeSpace
           label="Code section area"
-          fileName="Button.tsx"
+          fileName={data?.fileName}
           component={false}
         >
-          {`import React from "react";
-
-interface ButtonProps {
-  size: "lg" | "md" | "sm"; // Size of the button
-  children: React.ReactNode; // Content of the button
-  rightIcon?: React.ReactNode; // Icon to display on the right
-  leftIcon?: React.ReactNode; // Icon to display on the left
-  label?: string; // Accessibility label for the button
-  cn?: string; // Additional custom CSS classes
-  disable?: boolean; // Disables the button
-  clickable?: () => void; // Function to be called when the button is clicked
-}
-
-export const Button: React.FC<ButtonProps> = ({
-  size,
-  children,
-  rightIcon,
-  leftIcon,
-  label,
-  cn,
-  disable,
-  clickable,
-}) => {
-
-  // Size mapping for different button sizes
-  const sizeClasses = {
-    lg: "py-3 px-4 text-lg shadow-xl",
-    md: "py-3 px-4 text-md shadow-lg",
-    sm: "py-2 px-2 text-sm shadow-md",
-  };
-
-  return (
-    <button
-     className={\`\${ sizeClasses[size] // Apply size-specific classes } 
-    \${cn} flex items-center gap-2 \${ 
-    rightIcon || leftIcon ? 
-    "justify-around" : "justify-center" 
-  } space-x-2 cursor-pointer rounded-lg 
-   \${ 
-    disable ? 
-    "opacity-50 cursor-not-allowed" : 
-    "cursor-pointer"
-  }\`}
-      aria-label={label}
-      disabled={disable}
-      onClick={clickable}
-    >
-      {leftIcon && 
-      <span className="flex items-center">{leftIcon}</span>
-      }
-      {children}
-      {rightIcon && 
-      <span className="flex items-center">{rightIcon}</span>
-      }
-    </button>
-  );
-};
-`}
+          {data?.configBaseCode}
         </CodeSpace>
       </div>
 
@@ -117,12 +79,30 @@ export const Button: React.FC<ButtonProps> = ({
             Variations
           </h2>
 
-          <ol className="list-decimal list-inside">
-            <li>Primary Button</li>
+          <ol className="mt-4 flex flex-col gap-8 ">
+            <li>
+              {data?.variations.map((variation) => (
+                <React.Fragment key={variation.id}>
+                  <h2 className="title text-2xl font-bold tracking-tight leading-snug">
+                    {variation.title}
+                  </h2>
+                  <p className="w-full sm:w-[9/12]  text-slate-400 text-md sm:text-lg tracking-tight">
+                    {variation.description}
+                  </p>
+                  <div>
+                    <CodeSpace
+                      label=""
+                      fileName="Button.tsx"
+                      component={variation.component}
+                    >
+                      {variation.code}
+                    </CodeSpace>
+                  </div>
+                </React.Fragment>
+              ))}
+            </li>
           </ol>
         </div>
-
-        <div></div>
       </div>
     </section>
   );

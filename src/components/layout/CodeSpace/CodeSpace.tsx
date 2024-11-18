@@ -4,7 +4,7 @@ import { Button } from "../../ui/button/Button";
 import { CopyToClipboard } from "../../../helpers";
 
 interface CodeSpaceProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   label: string;
   cn?: string;
   fileName?: string;
@@ -43,7 +43,7 @@ export const CodeSpace: React.FC<CodeSpaceProps> = ({
 
   return (
     <div
-      className={`${cn} flex m-auto items-center bg-slate-800 shadow-lg rounded-lg relative mt-4`}
+      className={`${cn} flex  items-center bg-slate-800 shadow-lg rounded-lg relative mt-4 w-full sm:w-9/12`}
       aria-label={label}
     >
       <pre className="flex flex-col gap-2 w-full">
@@ -59,7 +59,7 @@ export const CodeSpace: React.FC<CodeSpaceProps> = ({
             {/* View Code Button - Only show if the component is present */}
             {component && (
               <Button
-                size="sm"
+                size="md"
                 cn="bg-slate-800 text-xs sm:text-sm font-medium tracking-tighter"
                 clickable={toggleCodeVisibility}
               >
@@ -79,7 +79,9 @@ export const CodeSpace: React.FC<CodeSpaceProps> = ({
 
         {/* Component (if provided) */}
         {component && !isCodeVisible && (
-          <div className="w-full p-4">{component}</div>
+          <div className="w-full p-4 flex items-center justify-center">
+            {component}
+          </div>
         )}
 
         {/* Code block */}

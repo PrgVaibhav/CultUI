@@ -23,9 +23,9 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   // Size mapping for different button sizes
   const sizeClasses = {
-    lg: "py-3 px-4 text-lg shadow-xl",
-    md: "py-3 px-4 text-md shadow-lg",
-    sm: "py-2 px-2 text-sm shadow-md",
+    lg: "py-2 px-4 text-lg shadow-xl",
+    md: "py-2 px-3 text-md shadow-lg",
+    sm: "py-2 px-1 text-sm shadow-md",
   };
 
   return (
