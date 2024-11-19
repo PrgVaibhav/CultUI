@@ -6,11 +6,9 @@ import {
   TitleDescription,
 } from "../../../components";
 import { useParams } from "react-router-dom";
-import {
-  COMPONENT_CARD_DATA,
-  ComponentCardData,
-} from "../../../helpers/data/Data";
+import { COMPONENT_CARD_DATA } from "../../../helpers/data/Data";
 import React, { useEffect, useState } from "react";
+import { ComponentCardData } from "../../../helpers/type/Types";
 
 export const SingleComponents = () => {
   const pathname = useParams();
@@ -67,7 +65,7 @@ export const SingleComponents = () => {
           fileName={data?.fileName}
           component={false}
         >
-          {data?.configBaseCode}
+          {data?.configBaseCode || `No Code Available`}
         </CodeSpace>
       </div>
 
@@ -80,9 +78,9 @@ export const SingleComponents = () => {
           </h2>
 
           <ol className="mt-4 flex flex-col gap-8 ">
-            <li>
-              {data?.variations.map((variation) => (
-                <React.Fragment key={variation.id}>
+            {data?.variations.map((variation) => (
+              <React.Fragment key={variation.id}>
+                <li>
                   <h2 className="title text-2xl font-bold tracking-tight leading-snug">
                     {variation.title}
                   </h2>
@@ -98,9 +96,9 @@ export const SingleComponents = () => {
                       {variation.code}
                     </CodeSpace>
                   </div>
-                </React.Fragment>
-              ))}
-            </li>
+                </li>
+              </React.Fragment>
+            ))}
           </ol>
         </div>
       </div>

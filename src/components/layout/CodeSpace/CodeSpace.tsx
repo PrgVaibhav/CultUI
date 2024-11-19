@@ -22,6 +22,8 @@ export const CodeSpace: React.FC<CodeSpaceProps> = ({
   const [copied, setCopied] = useState<boolean>(false);
   const maxLines = 5; // Maximum lines to show when collapsed
 
+  console.log(children);
+
   // Split code into lines for truncation
   const codeLines = (children as string).split("\n");
   const shouldTruncate = codeLines.length > maxLines;
@@ -79,7 +81,7 @@ export const CodeSpace: React.FC<CodeSpaceProps> = ({
 
         {/* Component (if provided) */}
         {component && !isCodeVisible && (
-          <div className="w-full p-4 flex items-center justify-center">
+          <div className="w-full p-4 flex items-center justify-center gap-4">
             {component}
           </div>
         )}

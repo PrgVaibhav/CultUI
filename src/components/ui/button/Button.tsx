@@ -1,3 +1,4 @@
+import { Loader2 } from "lucide-react";
 import React from "react";
 
 interface ButtonProps {
@@ -9,6 +10,7 @@ interface ButtonProps {
   cn?: string; // Additional custom CSS classes
   disable?: boolean; // Disables the button
   clickable?: () => void; // Function to be called when the button is clicked
+  isLoading?: boolean; // for adding a loading state
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -20,6 +22,7 @@ export const Button: React.FC<ButtonProps> = ({
   cn,
   disable,
   clickable,
+  isLoading,
 }) => {
   // Size mapping for different button sizes
   const sizeClasses = {
@@ -27,21 +30,23 @@ export const Button: React.FC<ButtonProps> = ({
     md: "py-2 px-3 text-md shadow-lg",
     sm: "py-2 px-1 text-sm shadow-md",
   };
-
   return (
     <button
       className={`${
         sizeClasses[size] // Apply size-specific classes
       } ${cn} flex items-center gap-2 text ${
-        rightIcon || leftIcon ? "justify-around" : "justify-center"
+        rightIcon || leftIcon || isLoading ? "justify-around" : "justify-center"
       } space-x-2 cursor-pointer rounded-lg ${
         disable ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
-      } active:scale-90 duration-150 transition-all`}
+      } active:scale-90 duration-150 transition-all ${
+        isLoading && `cursor-default opacity-60 transition-all`
+      }`}
       aria-label={label}
-      disabled={disable}
+      disabled={isLoading ? true : disable}
       onClick={clickable}
     >
       {leftIcon && <span className="flex items-center">{leftIcon}</span>}
+      {isLoading && <Loader2 className="animate-spin" />}
       {children}
       {rightIcon && <span className="flex items-center">{rightIcon}</span>}
     </button>
