@@ -13,7 +13,7 @@ export const DemoSection: React.FC<DemoSectionProps> = ({
 }) => {
   return (
     <div
-      className={`flex items-center w-full h-[200px] sm:h-[150px] justify-center bg-[#1B1B1B] rounded-lg shadow-lg text-white ${cn}`}
+      className={`flex items-center w-full h-[200px] p-2 sm:p-0 sm:h-[150px] justify-center bg-[#1B1B1B] rounded-lg shadow-lg text-white ${cn}`}
       aria-label={label}
     >
       {children}

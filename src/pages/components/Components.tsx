@@ -63,7 +63,7 @@ export const Components: React.FC = () => {
           return (
             <div
               key={data.id}
-              className="flex flex-col gap-2 w-full sm:w-[325px]  bg-[#63636373] p-3 rounded-lg shadow-xl  "
+              className="flex flex-col gap-2 w-full sm:w-[30vw]  bg-[#63636321] p-3 rounded-lg shadow-xl  "
             >
               <DemoSection>{data.demoComponent}</DemoSection>
               <Link to={`/components/${data.title}`} className=" ">

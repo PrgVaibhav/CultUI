@@ -5,3 +5,6 @@ export { TitleDescription } from "./layout/TitleDescription/TitleDescription";
 export { DemoSection } from "./layout/DemoSection/DemoSection";
 export { CodeSpace } from "./layout/CodeSpace/CodeSpace";
 export { SmallMessage } from "./ui/SmallMessage/SmallMessage";
+export { Input } from "./ui/input/Input";
+export { SmallCard } from "./ui/card/small-card/SmallCard";
+export { Card } from "./ui/card/Card";

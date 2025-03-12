@@ -1,5 +1,6 @@
 import { X } from "lucide-react";
 import { TitleDescription } from "../../layout/TitleDescription/TitleDescription";
+import { Input } from "../input/Input";
 
 interface SearchComponentProps {
   clickable?: () => void;
@@ -16,11 +17,11 @@ export const SearchComponent: React.FC<SearchComponentProps> = ({
           title="Find your way."
           description="Type to instantly filter and find the exact component you need, streamlining your design workflow"
         />
-        <input
+        <Input
           type="text"
+          name="search_component"
+          cn="w-full"
           placeholder="Search your favorite components..."
-          className="px-4 py-3 w-full  rounded-md shadow-lg bg-[#63636373] text-white placeholder-gray-300 focus:outline-none 
-             focus:ring-2 focus:ring-gray-500 focus:bg-[#4a4a4a73] active:bg-[#525252] hover:bg-[#4a4a4a] transition-all duration-200 ease-in-out"
         />
 
         <p

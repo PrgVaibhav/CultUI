@@ -45,7 +45,7 @@ export const CodeSpace: React.FC<CodeSpaceProps> = ({
 
   return (
     <div
-      className={`${cn} flex  items-center bg-slate-800 shadow-lg rounded-lg relative mt-4 w-full sm:w-9/12`}
+      className={`${cn} flex  items-center bg-slate-800 shadow-lg rounded-lg relative mt-4   m-auto smw-full`}
       aria-label={label}
     >
       <pre className="flex flex-col gap-2 w-full">

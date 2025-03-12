@@ -8,7 +8,7 @@ export const Breadcrumb: React.FC = () => {
   const pathnames = location.pathname.split("/").filter((x) => x);
 
   return (
-    <nav className="text-gray-600 my-4">
+    <nav className="text-gray-600 my-4 w-max bg-[#63636373] px-4 py-2 rounded-xl shadow-lg">
       <ul className="flex items-center space-x-2">
         {/* Home link */}
         <li title="Go to CultUI homepage">
@@ -26,13 +26,13 @@ export const Breadcrumb: React.FC = () => {
             <React.Fragment key={index}>
               <span className="text-gray-400">/</span>
               {isLast ? (
-                <span className="font-semibold text-gray-600 capitalize underline decoration-orange-400 underline-offset-4">
-                  {name}
+                <span className="font-semibold text-gray-400 capitalize underline decoration-orange-400 underline-offset-4">
+                  {decodeURIComponent(name)}
                 </span>
               ) : (
                 <li>
                   <Link to={routeTo} className="text-white capitalize">
-                    {name}
+                    {decodeURIComponent(name)}
                   </Link>
                 </li>
               )}

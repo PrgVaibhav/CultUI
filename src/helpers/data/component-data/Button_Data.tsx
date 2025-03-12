@@ -116,10 +116,10 @@ export const Button: React.FC<ButtonProps> = ({
         "Button with Icons. You can use the buttons on the left or the right of the text",
       component: (
         <>
-          <Button size="md" cn="bg-zinc-800 text-slate-300" leftIcon={"🔥"}>
+          <Button size="md" cn="bg-blue-800 text-slate-300" leftIcon={"🔥"}>
             Left Icon Button
           </Button>
-          <Button size="md" cn="bg-zinc-800 text-slate-300" rightIcon={"🔥"}>
+          <Button size="md" cn="bg-blue-800 text-slate-300" rightIcon={"🔥"}>
             Right Icon Button
           </Button>
         </>
