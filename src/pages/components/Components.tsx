@@ -1,19 +1,18 @@
-import React, { useState } from "react";
 import {
   Breadcrumb,
-  Button,
+  // Button,
   DemoSection,
   TitleDescription,
 } from "../../components";
 import { COMPONENT_CARD_DATA } from "../../helpers/data/Data";
 import { Link } from "react-router-dom";
-import { SearchComponent } from "../../components/ui/search-component/SearchComponent";
-import { Search } from "lucide-react";
+// import { SearchComponent } from "../../components/ui/search-component/SearchComponent";
+// import { Search } from "lucide-react";
 export const Components: React.FC = () => {
-  const [showSearchComponent, setShowSearchComponent] = useState(false);
-  const toggleSearchComponent = () => {
-    setShowSearchComponent((prev) => !prev);
-  };
+  // const [showSearchComponent, setShowSearchComponent] = useState(false);
+  // const toggleSearchComponent = () => {
+  //   setShowSearchComponent((prev) => !prev);
+  // };
 
   return (
     <section className="flex flex-col gap-6">
@@ -29,14 +28,14 @@ export const Components: React.FC = () => {
       />
 
       <div className="flex items-center justify-end sm:justify-between relative">
-        <Button
+        {/* <Button
           size="md"
           cn="hidden sm:block bg-slate-800 text-white active:scale-90 duration-200 transition-all"
         >
           📠 Request A Component
-        </Button>
+        </Button> */}
 
-        <Button
+        {/* <Button
           size="md"
           cn="flex bg-neutral-900
           text-white active:scale-90 duration-200 transition-all "
@@ -44,7 +43,7 @@ export const Components: React.FC = () => {
           leftIcon={<Search color="#fff" />}
         >
           <p>Search For your component </p>
-        </Button>
+        </Button> */}
 
         {/* <input
           type="text"
@@ -54,9 +53,9 @@ export const Components: React.FC = () => {
           onClick={toggleSearchComponent}
         /> */}
 
-        {showSearchComponent && (
+        {/* {showSearchComponent && (
           <SearchComponent clickable={toggleSearchComponent} />
-        )}
+        )} */}
       </div>
       <section className="flex flex-wrap items-stretch  gap-4 w-full">
         {COMPONENT_CARD_DATA.map((data) => {
